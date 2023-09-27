@@ -1,0 +1,62 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function click_calcular() {
+            let valorA = document.getElementById("ValorA").value;
+            let valorB = document.getElementById("ValorB").value;
+            let valorC = document.getElementById("ValorC").value;
+            if (valorA == "") {
+                alert("Informe o valor A");
+            } else if (valorB == "") {
+                alert("Informe o valor B");
+            } else if (valorC == ""){
+                alert("Informe o valor C")
+            } else {
+                let delta = (valorB ** 2) - 4 * valorA * valorC ;
+                let x1 =( -valorB + Math.sqrt(delta)) / (2 * valorA)
+                let x2 =( -valorB - Math.sqrt(delta)) / (2 * valorA)
+                document.getElementById("resultado").innerHTML = `valor de x1 é ${x1} e valor de x2 é ${x2}`;
+
+            }
+        }
+            function click_limpar() {
+                document.getElementById("ValorA").value = "";
+                document.getElementById("ValorB").value = "";
+                document.getElementById("ValorC").value = "";
+                document.getElementById("resultado").innerHTML = "";
+            }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="ValorA">valor de A: </label>
+            <input type="number" name="" id="ValorA" value="1" />
+        </div>
+        <div>
+            <label for="ValorB">valor de B: </label>
+            <input type="number" name="" id="ValorB" />
+        </div>
+        <div>
+            <label for="ValorC"> valor de C: </label>
+            <input type="number" name="" id="ValorC" />
+        </div>
+        <div id="resultado">
+
+        </div>
+        <div>
+            <input type="button" value="Calcular" onclick="click_calcular();" />
+
+            <input type="button" value="Limpar" onclick="click_limpar();" />
+        </div>
+    </form>
+</body>
+
+</html>
